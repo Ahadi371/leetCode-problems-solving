@@ -1,27 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head> 
+    <title>Counter Example</title>
+</head>
 <body>
-    <script> 
+
+<script>
+    // Input for n
+    // let n = parseInt(prompt());
+
+    // Input for calls
+    // let callsInput = prompt("Input calls:", "");
+    // let calls = callsInput.split(",");
+
+    // console.log("Calls:", calls);
+    const n = 10;
+    const calls = ["call", "call", "call"];
+
     function createCounter(n) {
-    return function() {
-        return n++;
-    };
-}
+        return function() {
+            return n++;
+        };
+    }
 
-// Example usage:
+    const counter = createCounter(n);
+    const result = [];
 
-// Create a counter starting from 5
-const counter = createCounter(10); 
-// console.log(counter);
-console.log(counter());  
-console.log(counter());  
-console.log(counter()); 
-console.log(counter())
-    </script>
+    for (let i = 0; i < calls.length; i++) {
+        if (calls[i].trim() === "call") {
+            result.push(counter());
+        }
+    }
+    console.log(result);  // For debugging purposes
+
+</script>
+
 </body>
 </html>
