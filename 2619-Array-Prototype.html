@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+
+function filterAndGet(nums) {
+    const filtered = nums.filter(num => num !== null && JSON.stringify(num) !== '{}');
+    return filtered.length > 0 ? filtered[0] : -1;
+}
+
+// Example usage:
+let nums1 = [null, {}, 3];
+let result1 = filterAndGet(nums1);
+console.log(result1);
+
+let nums2 = [];
+let result2 = filterAndGet(nums2);
+console.log(result2);
+    </script>
+</body>
+</html>
